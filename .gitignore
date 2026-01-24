@@ -12,6 +12,11 @@ wheels/
 # Environment variables
 .env
 
+# Test coverage
+.coverage
+htmlcov/
+*.cover
+
 # Temporary files and interview prep
 _temp/
 _interview_prep/
