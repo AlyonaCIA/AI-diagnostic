@@ -1,0 +1,33 @@
+{
+  "timestamp": "2026-01-24T00:19:44.732092",
+  "total_cases": 4,
+  "accuracy": {
+    "stage": 100.0,
+    "severity": 100.0,
+    "complexity": 50.0
+  },
+  "quality": {
+    "avg_suggestion_confidence": 0.963,
+    "avg_response_time_seconds": 1.53
+  },
+  "by_error_type": {
+    "code_generation": {
+      "count": 2,
+      "stage_accuracy": 100.0,
+      "severity_accuracy": 100.0,
+      "complexity_accuracy": 100.0,
+      "avg_suggestion_confidence": 0.975,
+      "suggestions_generated_rate": 100.0,
+      "avg_response_time_seconds": 1.66
+    },
+    "constant_error": {
+      "count": 2,
+      "stage_accuracy": 100.0,
+      "severity_accuracy": 100.0,
+      "complexity_accuracy": 0.0,
+      "avg_suggestion_confidence": 0.95,
+      "suggestions_generated_rate": 100.0,
+      "avg_response_time_seconds": 1.4
+    }
+  }
+}
