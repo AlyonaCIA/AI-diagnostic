@@ -1,6 +1,13 @@
-# OTee AI PLC Diagnostic System
+# AI PLC Diagnostic System
 
 A high-performance AI system that classifies PLC compilation errors and suggests actionable fixes using deterministic parsing and LLM-powered reasoning.
+
+## Author
+
+**A. Carolina I-Araujo** - AI Engineer  
+Email: alnacivanovaa@gmail.com
+
+Copyright (c) 2026 A. Carolina I-Araujo. All Rights Reserved.
 
 ## Overview
 
@@ -34,7 +41,7 @@ Error Log + Project XML → Parser → XML Extractor → LLM Agent → Diagnosti
 
 ```bash
 # Clone repository
-cd otee-ai-diagnostic
+cd ai-diagnostic
 
 # Install dependencies
 uv sync
@@ -362,8 +369,14 @@ Evaluator.save_report_json(report, "report.json")
 
 ## License
 
-Private project for OTee technical in  
-**Solution:** Set environment variable: `export GEMINI_API_KEY="your-key"`
+This software is licensed under a **Proprietary License**. All rights reserved.
 
-**Issue:** `Invalid PLC XML project format`  
-**Solution:** Ensure XML is valid PLCopen format with proper namespac
+**Commercial use requires a paid license.** This is not open source software.
+
+For licensing inquiries, pricing, and permissions, contact:
+- **A. Carolina I-Araujo**
+- Email: alnacivanovaa@gmail.com
+
+See [LICENSE](LICENSE) file for complete terms and conditions.
+
+Unauthorized use, reproduction, or distribution is strictly prohibited and may result in legal action.
