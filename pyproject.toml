@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "AI-powered PLC diagnostic system for error classification and fix suggestions"
 readme = "README.md"
 requires-python = ">=3.14"
-license = {text = "Proprietary"}
+license = {text = "AGPL-3.0-or-later"}
 authors = [
     {name = "A. Carolina I-Araujo", email = "alnacivanovaa@gmail.com"}
 ]
