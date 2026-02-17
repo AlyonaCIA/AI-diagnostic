@@ -1,0 +1,92 @@
+name: 'PR Checks'
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  setup:
+    name: Setup Environment
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: ./.github/actions/setup-python
+        with:
+          python-version: '3.14'
+
+  format:
+    name: Format Check
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: ./.github/actions/setup-python
+        with:
+          python-version: '3.14'
+      
+      - name: Check Formatting
+        uses: ./.github/actions/run-format
+
+  lint:
+    name: Lint Check
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: ./.github/actions/setup-python
+        with:
+          python-version: '3.14'
+      
+      - name: Run Linting
+        uses: ./.github/actions/run-lint
+
+  audit:
+    name: Security Audit
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: ./.github/actions/setup-python
+        with:
+          python-version: '3.14'
+      
+      - name: Run Audit
+        uses: ./.github/actions/run-audit
+
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: ./.github/actions/setup-python
+        with:
+          python-version: '3.14'
+      
+      - name: Run Tests
+        uses: ./.github/actions/run-tests
+        with:
+          python-version: '3.14'
+
+  report:
+    name: Upload Reports
+    runs-on: ubuntu-latest
+    if: always()
+    needs: [format, lint, audit, test]
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Upload Reports
+        uses: ./.github/actions/upload-reports

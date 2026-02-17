@@ -1,0 +1,72 @@
+name: 'Scheduled Monitoring'
+
+on:
+  schedule:
+    # Run every day at 02:00 UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+jobs:
+  setup:
+    name: Setup Environment
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: ./.github/actions/setup-python
+        with:
+          python-version: '3.14'
+
+  full-test-suite:
+    name: Full Test Suite
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: ./.github/actions/setup-python
+        with:
+          python-version: '3.14'
+      
+      - name: Run Full Test Suite
+        uses: ./.github/actions/run-tests
+        with:
+          python-version: '3.14'
+          coverage-threshold: '70'
+
+  comprehensive-audit:
+    name: Comprehensive Security and Quality Checks
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: ./.github/actions/setup-python
+        with:
+          python-version: '3.14'
+      
+      - name: Run Format Check
+        uses: ./.github/actions/run-format
+      
+      - name: Run Lint
+        uses: ./.github/actions/run-lint
+      
+      - name: Run Security Audit
+        uses: ./.github/actions/run-audit
+
+  report:
+    name: Upload Monitoring Reports
+    runs-on: ubuntu-latest
+    if: always()
+    needs: [full-test-suite, comprehensive-audit]
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Upload Reports
+        uses: ./.github/actions/upload-reports
+      
+      - name: Summary
+        run: echo "✅ AI Diagnostic scheduled monitoring completed. Check artifacts for detailed reports."
