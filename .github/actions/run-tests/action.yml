@@ -1,0 +1,40 @@
+name: 'Run Tests'
+description: 'Execute tests with pytest and generate coverage reports'
+
+inputs:
+  python-version:
+    required: false
+    default: '3.14'
+    description: 'Python version'
+  
+  coverage-threshold:
+    required: false
+    default: '70'
+    description: 'Minimum coverage % required'
+
+runs:
+  using: composite
+  steps:
+    - name: Install test dependencies
+      run: uv pip install --system pytest pytest-cov pytest-xdist pytest-mock
+      shell: bash
+    
+    - name: Run tests with coverage
+      run: |
+        pytest tests/ \
+          --cov=app \
+          --cov-report=xml \
+          --cov-report=html \
+          --cov-report=term-missing \
+          -v
+      shell: bash
+      continue-on-error: false
+    
+    - name: Upload coverage artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-report-py${{ inputs.python-version }}
+        path: |
+          coverage.xml
+          htmlcov/

@@ -1,0 +1,15 @@
+name: 'Security Audit'
+description: 'Scan dependencies for known vulnerabilities with pip-audit'
+
+runs:
+  using: composite
+  steps:
+    - name: Install pip-audit
+      run: uv pip install --system pip-audit
+      shell: bash
+    
+    - name: Run security audit
+      run: |
+        pip-audit --desc
+      shell: bash
+      continue-on-error: true
