@@ -369,14 +369,29 @@ Evaluator.save_report_json(report, "report.json")
 
 ## License
 
-This software is licensed under a **Proprietary License**. All rights reserved.
+This software is available under **dual licensing**:
 
-**Commercial use requires a paid license.** This is not open source software.
+### 1. AGPL v3 (Free & Open Source)
 
-For licensing inquiries, pricing, and permissions, contact:
-- **A. Carolina I-Araujo**
+For open source projects, non-commercial use, research, and learning:
+- Free to use, modify, and distribute
+- You MUST share your modifications under AGPL v3
+- If you use this as a web service, you MUST open source your entire application
+- Full license: [GNU AGPL v3](https://www.gnu.org/licenses/agpl-3.0.html)
+
+### 2. Commercial License (Paid)
+
+For companies that want to:
+- Use this in closed-source/proprietary software
+- Offer this as a service without sharing code
+- Avoid AGPL restrictions
+
+**Contact for commercial licensing:**
+- **A. Carolina I-Araujo** - AI Engineer
 - Email: alnacivanovaa@gmail.com
 
-See [LICENSE](LICENSE) file for complete terms and conditions.
+---
 
-Unauthorized use, reproduction, or distribution is strictly prohibited and may result in legal action.
+**Why AGPL?** It ensures that improvements to this software benefit the community. If you build a business on it, you either contribute back or purchase a commercial license.
+
+See [LICENSE](LICENSE) file for complete terms.
