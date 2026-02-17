@@ -1,67 +1,42 @@
-PROPRIETARY SOFTWARE LICENSE AGREEMENT
+GNU AFFERO GENERAL PUBLIC LICENSE
+Version 3, 19 November 2007
 
-Copyright (c) 2026 A. Carolina I-Araujo
-All Rights Reserved.
+Copyright (C) 2026 A. Carolina I-Araujo
 
-AI PLC Diagnostic System
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-NOTICE: This software and associated documentation files (the "Software") are 
-proprietary and confidential. All rights are reserved by the copyright holder.
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
 
-TERMS AND CONDITIONS:
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-1. OWNERSHIP
-   The Software is licensed, not sold. A. Carolina I-Araujo retains all right, 
-   title, and interest in and to the Software, including all intellectual 
-   property rights.
+================================================================================
+DUAL LICENSING OPTION
+================================================================================
 
-2. LICENSE GRANT
-   Subject to payment of applicable license fees and compliance with these terms,
-   a limited, non-exclusive, non-transferable license is granted to use the 
-   Software.
+This software is available under two licenses:
 
-3. RESTRICTIONS
-   You may NOT:
-   - Use the Software without a valid paid license
-   - Copy, modify, or create derivative works
-   - Distribute, sublicense, rent, or lease the Software
-   - Reverse engineer, decompile, or disassemble the Software
-   - Remove or alter any proprietary notices or labels
+1. AGPL v3 (this file) - Free for open source and non-commercial use
+   - You MUST share any modifications
+   - You MUST open source your entire application if you use this as a service
+   - Full license: https://www.gnu.org/licenses/agpl-3.0.html
 
-4. COMMERCIAL USE
-   Any use of this Software for commercial purposes requires a paid commercial 
-   license. Contact alnacivanovaa@gmail.com for licensing terms and pricing.
+2. Commercial License - For proprietary/closed-source use
+   - Use without AGPL restrictions
+   - Keep your code private
+   - Priority support available
+   - Contact: alnacivanovaa@gmail.com
 
-5. EVALUATION
-   A 30-day evaluation period may be granted upon written request. After the 
-   evaluation period, continued use requires purchase of a license.
+================================================================================
 
-6. FEES
-   License fees are determined based on:
-   - Number of users
-   - Deployment environment (development, staging, production)
-   - Support level required
-   Contact alnacivanovaa@gmail.com for a quote.
+For the full text of the GNU Affero General Public License v3.0, visit:
+https://www.gnu.org/licenses/agpl-3.0.txt
 
-7. TERMINATION
-   This license terminates automatically if you fail to comply with any terms.
-   Upon termination, you must destroy all copies of the Software.
-
-8. WARRANTY DISCLAIMER
-   THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
-   IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS 
-   FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
-
-9. LIMITATION OF LIABILITY
-   IN NO EVENT SHALL THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR 
-   OTHER LIABILITY ARISING FROM USE OF THE SOFTWARE.
-
-10. CONTACT INFORMATION
-    For licensing inquiries, support, or permissions:
-    
-    A. Carolina I-Araujo
-    AI Engineer
-    Email: alnacivanovaa@gmail.com
-
-UNAUTHORIZED USE OF THIS SOFTWARE IS STRICTLY PROHIBITED AND MAY RESULT IN 
-LEGAL ACTION.
+Author: A. Carolina I-Araujo
+Email: alnacivanovaa@gmail.com
