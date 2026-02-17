@@ -1,5 +1,5 @@
-name: 'Security Audit'
-description: 'Scan dependencies for known vulnerabilities with pip-audit'
+name: 'AI Diagnostic - Security Scan'
+description: 'Dependency vulnerability scanning'
 
 runs:
   using: composite

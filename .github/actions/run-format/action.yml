@@ -1,5 +1,5 @@
-name: 'Check Code Format'
-description: 'Validate code formatting with black and isort'
+name: 'AI Diagnostic - Format Check'
+description: 'Check code style with black and isort for diagnostic system'
 
 runs:
   using: composite

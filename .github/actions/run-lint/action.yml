@@ -1,5 +1,5 @@
-name: 'Run Linting'
-description: 'Check code quality with flake8 and pylint'
+name: 'AI Diagnostic - Linting'
+description: 'Quality checks with flake8 and pylint'
 
 runs:
   using: composite

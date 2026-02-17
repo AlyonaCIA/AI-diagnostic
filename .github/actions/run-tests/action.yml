@@ -1,10 +1,10 @@
-name: 'Run Tests'
-description: 'Execute tests with pytest and generate coverage reports'
+name: 'AI Diagnostic - Run Tests'
+description: 'Run pytest suite for PLC diagnostic agent'
 
 inputs:
   python-version:
     required: false
-    default: '3.14'
+    default: '3.12'
     description: 'Python version'
   
   coverage-threshold:

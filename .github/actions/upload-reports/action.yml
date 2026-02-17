@@ -1,5 +1,5 @@
-name: 'Upload Reports'
-description: 'Upload test coverage and lint reports as artifacts'
+name: 'AI Diagnostic - Upload Artifacts'
+description: 'Save test and coverage reports'
 
 runs:
   using: composite

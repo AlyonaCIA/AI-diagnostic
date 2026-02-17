@@ -1,4 +1,4 @@
-name: 'PR Checks'
+name: 'AI Diagnostic CI'
 
 on:
   pull_request:
@@ -16,7 +16,7 @@ jobs:
       - name: Setup Python
         uses: ./.github/actions/setup-python
         with:
-          python-version: '3.14'
+          python-version: '3.12'
 
   format:
     name: Format Check
@@ -28,7 +28,7 @@ jobs:
       - name: Setup Python
         uses: ./.github/actions/setup-python
         with:
-          python-version: '3.14'
+          python-version: '3.12'
       
       - name: Check Formatting
         uses: ./.github/actions/run-format
@@ -43,7 +43,7 @@ jobs:
       - name: Setup Python
         uses: ./.github/actions/setup-python
         with:
-          python-version: '3.14'
+          python-version: '3.12'
       
       - name: Run Linting
         uses: ./.github/actions/run-lint
@@ -58,7 +58,7 @@ jobs:
       - name: Setup Python
         uses: ./.github/actions/setup-python
         with:
-          python-version: '3.14'
+          python-version: '3.12'
       
       - name: Run Audit
         uses: ./.github/actions/run-audit
@@ -73,12 +73,12 @@ jobs:
       - name: Setup Python
         uses: ./.github/actions/setup-python
         with:
-          python-version: '3.14'
+          python-version: '3.12'
       
       - name: Run Tests
         uses: ./.github/actions/run-tests
         with:
-          python-version: '3.14'
+          python-version: '3.12'
 
   report:
     name: Upload Reports

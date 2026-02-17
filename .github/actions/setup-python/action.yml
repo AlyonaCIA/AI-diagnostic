@@ -1,11 +1,11 @@
-name: 'Setup Python Environment'
-description: 'Setup Python with uv package manager for AI Diagnostic project'
+name: 'AI Diagnostic - Setup Python'
+description: 'Setup Python environment for AI PLC diagnostic system'
 
 inputs:
   python-version:
     required: false
-    default: '3.14'
-    description: 'Python version (3.14+)'
+    default: '3.12'
+    description: 'Python version (3.10, 3.11, 3.12)'
 
 runs:
   using: composite
@@ -24,5 +24,6 @@ runs:
       shell: bash
     
     - name: Install project dependencies
-      run: uv sync
+      run: |
+        uv pip install --system fastapi google-genai google-generativeai loguru lxml openai pydantic-settings pytest-cov pytest-mock python-dotenv uvicorn pytest
       shell: bash
