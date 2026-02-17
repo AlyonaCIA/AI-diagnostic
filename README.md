@@ -50,10 +50,42 @@ uv sync
 export GEMINI_API_KEY="your-api-key-here"
 ```
 
-### Run the API Server
+### Using Make Commands (Recommended)
+
+For streamlined development, use the included Makefile:
 
 ```bash
+# See all available commands
+make help
+
+# Install dependencies
+make dev
+
+# Run development server
+make run
+
+# Run tests
+make test
+
+# Format code
+make format
+
+# Run all quality checks
+make ci
+```
+
+### Run the API Server
+
+**Development mode:**
+```bash
+make run
+# or manually:
 uv run uvicorn app.main:app --reload
+```
+
+**Production mode:**
+```bash
+make run-prod
 ```
 
 Server runs at: `http://127.0.0.1:8000`
