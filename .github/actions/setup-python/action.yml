@@ -24,6 +24,5 @@ runs:
       shell: bash
     
     - name: Install project dependencies
-      run: |
-        uv pip install --system fastapi google-genai google-generativeai loguru lxml openai pydantic-settings pytest-cov pytest-mock python-dotenv uvicorn pytest
+      run: uv sync --all-groups
       shell: bash

@@ -15,13 +15,9 @@ inputs:
 runs:
   using: composite
   steps:
-    - name: Install test dependencies
-      run: uv pip install --system pytest pytest-cov pytest-xdist pytest-mock
-      shell: bash
-    
     - name: Run tests with coverage
       run: |
-        pytest tests/ \
+        uv run pytest tests/ \
           --cov=app \
           --cov-report=xml \
           --cov-report=html \

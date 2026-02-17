@@ -4,19 +4,12 @@ description: 'Quality checks with flake8 and pylint'
 runs:
   using: composite
   steps:
-    - name: Install lint tools
-      run: uv pip install --system flake8 pylint
-      shell: bash
-    
     - name: Run flake8
-      run: |
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+      run: uv run flake8 app/ tests/
       shell: bash
       continue-on-error: true
     
     - name: Run pylint
-      run: |
-        find . -type f -name "*.py" ! -path "./.*" ! -path "./.git/*" -exec pylint {} + || true
+      run: uv run pylint app/ || true
       shell: bash
       continue-on-error: true

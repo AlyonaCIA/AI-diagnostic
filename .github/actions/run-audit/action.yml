@@ -4,12 +4,7 @@ description: 'Dependency vulnerability scanning'
 runs:
   using: composite
   steps:
-    - name: Install pip-audit
-      run: uv pip install --system pip-audit
-      shell: bash
-    
     - name: Run security audit
-      run: |
-        pip-audit --desc
+      run: uv run pip-audit
       shell: bash
       continue-on-error: true

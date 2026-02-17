@@ -4,16 +4,12 @@ description: 'Check code style with black and isort for diagnostic system'
 runs:
   using: composite
   steps:
-    - name: Install formatting tools
-      run: uv pip install --system black isort
-      shell: bash
-    
     - name: Check import sorting with isort
-      run: isort --check-only --diff app/ tests/ || true
+      run: uv run isort --check-only --diff app/ tests/
       shell: bash
       continue-on-error: true
     
     - name: Check code format with black
-      run: black --check app/ tests/ || true
+      run: uv run black --check app/ tests/
       shell: bash
       continue-on-error: true

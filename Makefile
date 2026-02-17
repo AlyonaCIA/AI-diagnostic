@@ -51,10 +51,9 @@ format:
 lint:
 	@echo "Running linting checks..."
 	@echo "\n=== Flake8 ==="
-	uv run flake8 app/ tests/ --count --select=E9,F63,F7,F82 --show-source --statistics
-	uv run flake8 app/ tests/ --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+	uv run flake8 app/ tests/
 	@echo "\n=== Pylint ==="
-	uv run pylint app/ tests/ || true
+	uv run pylint app/ || true
 	@echo "\n✓ Linting complete"
 
 audit:
