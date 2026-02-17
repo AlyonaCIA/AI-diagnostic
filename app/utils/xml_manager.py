@@ -1,16 +1,18 @@
 """
 File: app/utils/xml_manager.py
-Description: Efficient XML processing for PLCopen projects. 
-Focuses on extracting relevant Code blocks (ST) and Variable declarations 
+Description: Efficient XML processing for PLCopen projects.
+Focuses on extracting relevant Code blocks (ST) and Variable declarations
 to provide context for AI diagnostics.
 """
 
 # Standard Library Imports
 from typing import Optional
 
+from loguru import logger
+
 # Third-Party Imports
 from lxml import etree
-from loguru import logger
+
 
 class XMLContextExtractor:
     """
@@ -23,7 +25,7 @@ class XMLContextExtractor:
         """
         try:
             # PLCopen XMLs can have namespaces; we handle them to ensure XPath works
-            self.tree = etree.fromstring(xml_content.encode('utf-8'))
+            self.tree = etree.fromstring(xml_content.encode("utf-8"))
             self.ns = {"ns": "http://www.plcopen.org/xml/tc6_0201"}
         except Exception as e:
             logger.error(f"Failed to parse PLC XML: {e}")
@@ -40,8 +42,10 @@ class XMLContextExtractor:
 
         if pou_element:
             # We return the raw XML of just this POU to provide focused context
-            context = etree.tostring(pou_element[0], pretty_print=True, encoding='unicode')
+            context = etree.tostring(
+                pou_element[0], pretty_print=True, encoding="unicode"
+            )
             logger.info(f"Context extracted for POU: {pou_name}")
             return context
-        
+
         return "Context not found for the specified POU."

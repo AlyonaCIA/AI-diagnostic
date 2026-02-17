@@ -2,16 +2,20 @@
 File: tests/test_agent_integration.py
 Description: End-to-end integration test for the AI Agent.
 """
+
 import os
+
 import pytest
+
 from app.agents.diagnostician import PLCDiagnosticAgent
 from app.agents.schemas import DiagnosticReport
+
 
 def test_agent_connection():
     # Skip if no API key
     if not os.getenv("GEMINI_API_KEY"):
         pytest.skip("GEMINI_API_KEY not found - skipping real Gemini API test")
-    
+
     # Arrange
     agent = PLCDiagnosticAgent()
     mock_metadata = {"stage": "iec_compilation", "line": 30}

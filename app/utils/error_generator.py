@@ -4,14 +4,15 @@ Description: Synthetic error generator for creating test cases and variations
 of the two base error types (constant_error and empty_project).
 """
 
+import random
 from dataclasses import dataclass
 from typing import List, Tuple
-import random
 
 
 @dataclass
 class SyntheticError:
     """Represents a synthetic error case with ground truth labels."""
+
     log_text: str
     xml_content: str
     expected_stage: str
@@ -224,62 +225,64 @@ AttributeError: 'NoneType' object has no attribute 'upper'
         """Generate constant_error variations."""
         errors = []
         line_numbers = range(20, 80, 3)  # Different line numbers
-        
+
         for i, line_num in enumerate(list(line_numbers)[:count]):
             var1, var2 = ErrorGenerator.VAR_PAIRS[i % len(ErrorGenerator.VAR_PAIRS)]
-            
+
             # Format line with proper spacing
             line_formatted = f"{line_num:04d}:"
             assignment = f"{var2} := {var1};"
-            
+
             log = ErrorGenerator.CONSTANT_ERROR_LOG_TEMPLATE.format(
-                line=line_num,
-                line_formatted=line_formatted,
-                assignment=assignment
+                line=line_num, line_formatted=line_formatted, assignment=assignment
             )
-            
+
             xml = ErrorGenerator.CONSTANT_ERROR_XML_TEMPLATE.format(
-                var1_name=var1,
-                var2_name=var2
+                var1_name=var1, var2_name=var2
             )
-            
-            errors.append(SyntheticError(
-                log_text=log,
-                xml_content=xml,
-                expected_stage="iec_compilation",
-                expected_severity="blocking",
-                expected_complexity="trivial",
-                error_type="constant_error"
-            ))
-        
+
+            errors.append(
+                SyntheticError(
+                    log_text=log,
+                    xml_content=xml,
+                    expected_stage="iec_compilation",
+                    expected_severity="blocking",
+                    expected_complexity="trivial",
+                    error_type="constant_error",
+                )
+            )
+
         return errors
 
     @staticmethod
     def generate_code_generation_errors(count: int = 10) -> List[SyntheticError]:
         """Generate code_generation error variations."""
         errors = []
-        
+
         for i in range(count):
             # Vary the content slightly or keep empty
             content = "" if i % 2 == 0 else "  "  # Some with empty, some with spaces
-            
+
             log = ErrorGenerator.CODE_GEN_ERROR_LOG_TEMPLATE
             xml = ErrorGenerator.EMPTY_PROJECT_XML_TEMPLATE.format(content=content)
-            
-            errors.append(SyntheticError(
-                log_text=log,
-                xml_content=xml,
-                expected_stage="code_generation",
-                expected_severity="blocking",
-                expected_complexity="trivial",
-                error_type="code_generation"
-            ))
-        
+
+            errors.append(
+                SyntheticError(
+                    log_text=log,
+                    xml_content=xml,
+                    expected_stage="code_generation",
+                    expected_severity="blocking",
+                    expected_complexity="trivial",
+                    error_type="code_generation",
+                )
+            )
+
         return errors
 
     @staticmethod
-    def generate_all_test_cases(constant_error_count: int = 15, 
-                               code_gen_count: int = 15) -> List[SyntheticError]:
+    def generate_all_test_cases(
+        constant_error_count: int = 15, code_gen_count: int = 15
+    ) -> List[SyntheticError]:
         """Generate all test cases (20-30 total)."""
         errors = []
         errors.extend(ErrorGenerator.generate_constant_errors(constant_error_count))

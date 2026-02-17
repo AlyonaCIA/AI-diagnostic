@@ -1,6 +1,6 @@
 """
 File: tests/test_parser.py
-Description: Unit tests for PLCParser ensuring correct stage and line detection 
+Description: Unit tests for PLCParser ensuring correct stage and line detection
 against real industrial build logs.
 """
 
@@ -11,6 +11,7 @@ import pytest
 from app.core.parser import PLCParser
 from app.utils.loader import load_fixture
 
+
 @pytest.mark.parametrize(
     "log_file, expected_stage, expected_line",
     [
@@ -18,9 +19,11 @@ from app.utils.loader import load_fixture
         ("empty_project.txt", "code_generation", 43),
     ],
 )
-def test_parser_metadata_extraction(log_file: str, expected_stage: str, expected_line: int):
+def test_parser_metadata_extraction(
+    log_file: str, expected_stage: str, expected_line: int
+):
     """
-    Validates that the parser correctly identifies the build stage and 
+    Validates that the parser correctly identifies the build stage and
     extracts the precise line number from raw logs [cite: 11-12, 17].
     """
     # Arrange
@@ -33,4 +36,6 @@ def test_parser_metadata_extraction(log_file: str, expected_stage: str, expected
     # Assert
     assert metadata["stage"] == expected_stage, f"Failed for {log_file}: Stage mismatch"
     assert metadata["line"] == expected_line, f"Failed for {log_file}: Line mismatch"
-    assert metadata["severity"] == "blocking", "All critical build errors should be blocking" [cite: 16]
+    assert (
+        metadata["severity"] == "blocking"
+    ), "All critical build errors should be blocking"[cite:16]

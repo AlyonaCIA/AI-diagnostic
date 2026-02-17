@@ -6,6 +6,7 @@ Implementations support Gemini, OpenAI, and other LLM services.
 
 from abc import ABC, abstractmethod
 from typing import Any, Dict
+
 from app.agents.schemas import DiagnosticReport
 
 
@@ -13,14 +14,16 @@ class LLMProvider(ABC):
     """Abstract base class for LLM providers."""
 
     @abstractmethod
-    def get_fix_suggestions(self, metadata: Dict[str, Any], xml_context: str) -> DiagnosticReport:
+    def get_fix_suggestions(
+        self, metadata: Dict[str, Any], xml_context: str
+    ) -> DiagnosticReport:
         """
         Generate fix suggestions for a PLC error.
-        
+
         Args:
             metadata: Parsed error metadata (stage, line, severity)
             xml_context: Relevant XML code snippet
-            
+
         Returns:
             DiagnosticReport with classification and suggestions
         """
@@ -34,13 +37,15 @@ class GeminiProvider(LLMProvider):
         """Initialize Gemini provider."""
         from google import genai
         from google.genai.types import GenerateContentConfig
-        
+
         self.api_key = api_key
         self.client = genai.Client(api_key=api_key)
         self.model_id = "gemini-2.5-flash-lite"
         self.GenerateContentConfig = GenerateContentConfig
 
-    def get_fix_suggestions(self, metadata: Dict[str, Any], xml_context: str) -> DiagnosticReport:
+    def get_fix_suggestions(
+        self, metadata: Dict[str, Any], xml_context: str
+    ) -> DiagnosticReport:
         """Generate fix suggestions using Gemini."""
         from loguru import logger
 
@@ -66,7 +71,7 @@ class GeminiProvider(LLMProvider):
                     system_instruction=system_prompt,
                     response_mime_type="application/json",
                     response_schema=DiagnosticReport,
-                )
+                ),
             )
             return response.parsed
 
@@ -89,23 +94,25 @@ class OpenAIProvider(LLMProvider):
         # self.model_id = "gpt-4-turbo-preview"
         pass
 
-    def get_fix_suggestions(self, metadata: Dict[str, Any], xml_context: str) -> DiagnosticReport:
+    def get_fix_suggestions(
+        self, metadata: Dict[str, Any], xml_context: str
+    ) -> DiagnosticReport:
         """
         Generate fix suggestions using OpenAI.
-        
+
         Example implementation:
         ```python
         system_prompt = (
             "You are a Lead Automation Engineer specializing in PLC programming..."
         )
-        
+
         user_prompt = (
             f"Build Stage: {metadata['stage']}\n"
             f"Error Line: {metadata['line']}\n"
             f"XML Context: {xml_context}\n\n"
             "Generate 1-3 actionable suggestions in JSON format."
         )
-        
+
         response = self.client.chat.completions.create(
             model=self.model_id,
             messages=[
@@ -120,7 +127,7 @@ class OpenAIProvider(LLMProvider):
                 }
             }
         )
-        
+
         return DiagnosticReport.model_validate_json(response.choices[0].message.content)
         ```
         """
@@ -142,10 +149,12 @@ class AnthropicProvider(LLMProvider):
         # Future: from anthropic import Anthropic
         pass
 
-    def get_fix_suggestions(self, metadata: Dict[str, Any], xml_context: str) -> DiagnosticReport:
+    def get_fix_suggestions(
+        self, metadata: Dict[str, Any], xml_context: str
+    ) -> DiagnosticReport:
         """
         Generate fix suggestions using Claude.
-        
+
         Implementation would be similar to OpenAI but using Claude's API.
         """
         raise NotImplementedError(
