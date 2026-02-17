@@ -1,6 +1,6 @@
 """
 File: app/main.py
-Description: Main entry point for the OTee AI Diagnostic API. 
+Description: Main entry point for the AI Diagnostic API. 
 Integrates deterministic regex parsing with LLM-powered reasoning 
 to provide actionable fixes for PLC build errors.
 """
@@ -10,7 +10,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Standard Library Imports
-from typing import Dict
+from typing import Dict, Any
 
 # Third-Party Imports
 from fastapi import FastAPI, HTTPException
@@ -23,7 +23,7 @@ from app.agents.diagnostician import PLCDiagnosticAgent
 from app.agents.schemas import DiagnosticReport
 
 # Initialize Singletons at module level for performance optimization
-app = FastAPI(title="OTee AI PLC Diagnostic API")
+app = FastAPI(title="AI PLC Diagnostic API")
 parser = PLCParser()
 agent = PLCDiagnosticAgent()
 
@@ -41,12 +41,12 @@ async def health_check() -> Dict[str, str]:
     return {
         "status": "healthy",
         "version": "0.1.0",
-        "service": "OTee AI PLC Diagnostic API"
+        "service": "AI PLC Diagnostic API"
     }
 
 
 @app.get("/health/detailed", tags=["Health"])
-async def detailed_health() -> Dict[str, any]:
+async def detailed_health() -> Dict[str, Any]:
     """
     Detailed health check with component status.
     
