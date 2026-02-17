@@ -9,6 +9,20 @@ Email: alnacivanovaa@gmail.com
 
 Copyright (c) 2026 A. Carolina I-Araujo. All Rights Reserved.
 
+## 📐 Architecture
+
+For detailed system architecture, data flow diagrams, and design decisions, see:
+
+**[📖 Architecture Documentation](docs/architecture.md)**
+
+Includes:
+- System architecture diagram
+- Component responsibilities
+- Data flow sequence
+- Error classification pipeline
+- Technology stack
+- Deployment architecture
+
 ## Overview
 
 PLC (Programmable Logic Controller) development involves a complex multi-stage build pipeline:
