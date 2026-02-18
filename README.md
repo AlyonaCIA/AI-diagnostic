@@ -7,14 +7,11 @@
 ![Type Checked](https://img.shields.io/badge/type%20checked-mypy-blue.svg)
 ![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)
 
-A high-performance AI system that classifies PLC compilation errors and suggests actionable fixes using deterministic parsing and LLM-powered reasoning.
+> **Author:** A. Carolina I-Araujo  
+> **Email:** alnacivanovaa@gmail.com  
+> **Version:** 1.0.0
 
-## Author
-
-**A. Carolina I-Araujo** - AI Engineer  
-Email: alnacivanovaa@gmail.com
-
-Copyright (c) 2026 A. Carolina I-Araujo. All Rights Reserved.
+A **production-ready** AI system that classifies PLC compilation errors and suggests actionable fixes using deterministic parsing and LLM-powered reasoning.
 
 ---
 
@@ -506,29 +503,121 @@ Evaluator.save_report_json(report, "report.json")
 
 ## License
 
-This software is available under **dual licensing**:
+**Copyright © 2026 A. Carolina I-Araujo**
 
-### 1. AGPL v3 (Free & Open Source)
+This project is available under a **dual licensing model** to support both open-source community and commercial use:
 
-For open source projects, non-commercial use, research, and learning:
-- Free to use, modify, and distribute
-- You MUST share your modifications under AGPL v3
-- If you use this as a web service, you MUST open source your entire application
-- Full license: [GNU AGPL v3](https://www.gnu.org/licenses/agpl-3.0.html)
+### Free License: AGPL-3.0
 
-### 2. Commercial License (Paid)
+The following users can use this software **FREE** under the GNU Affero General Public License v3.0:
 
-For companies that want to:
-- Use this in closed-source/proprietary software
-- Offer this as a service without sharing code
-- Avoid AGPL restrictions
+| User Type | Use Case | Cost |
+|-----------|----------|------|
+| **Individual Developers** | Personal projects, learning, portfolio | **FREE** |
+| **Educational Institutions** | Universities, schools, research, teaching | **FREE** |
+| **Students & Researchers** | Academic projects, thesis work | **FREE** |
+| **Non-Profit Organizations** | Charitable work, community projects | **FREE** |
+| **Open Source Projects** | AGPL-compatible projects, contributions | **FREE** |
 
-**Contact for commercial licensing:**
-- **A. Carolina I-Araujo** - AI Engineer
+**Requirements:**
+- Source code modifications must be disclosed
+- Derivative works must use AGPL-3.0
+- Network use triggers copyleft (AGPL provision)
+- Attribution to original author required
+
+### Commercial License
+
+**For-profit companies** and commercial entities must obtain a commercial license:
+
+| User Type | When Required |
+|-----------|---------------|
+| **Companies** | Using software in any commercial capacity |
+| **For-Profit Orgs** | Revenue-generating products or services |
+| **SaaS Providers** | Hosting as a service for customers |
+| **Product Integration** | Embedding in proprietary software |
+
+**Benefits:**
+- No source code disclosure required
+- No copyleft obligations
+- Proprietary use allowed
+- Priority support & maintenance
+- Custom feature development available
+- Legal protection & indemnification
+
+**To obtain a commercial license:**
 - Email: alnacivanovaa@gmail.com
+- Subject: "AI PLC Diagnostic - Commercial License Request"
+- Include: Company name, use case, number of developers
+
+### Licensing FAQ
+
+**Q: I'm a freelancer building a client project. Which license?**  
+A: If your client is a commercial entity, they need a commercial license. If you're doing non-profit work, AGPL-3.0 applies.
+
+**Q: Can I use this for my startup?**  
+A: If your startup is a registered business or generating revenue, you need a commercial license.
+
+**Q: What if I modify the code?**  
+A: Under AGPL-3.0, you must share modifications. Under commercial license, modifications are proprietary.
+
+**Q: University spin-off company?**  
+A: Company = Commercial license. University research project = AGPL-3.0.
+
+For complete legal terms, see the [LICENSE](LICENSE) file.
+
+**Questions?** Contact: alnacivanovaa@gmail.com
 
 ---
 
-**Why AGPL?** It ensures that improvements to this software benefit the community. If you build a business on it, you either contribute back or purchase a commercial license.
+## Author
 
-See [LICENSE](LICENSE) file for complete terms.
+<div align="center">
+
+### A. Carolina I-Araujo
+
+**AI Engineer | PLC Systems Specialist | API Architect**
+
+**Email:** alnacivanovaa@gmail.com  
+**GitHub:** [@AlyonaCIA](https://github.com/AlyonaCIA)  
+**Version:** 1.0.0
+
+---
+
+### Project Stats
+
+![Python Version](https://img.shields.io/badge/Python-3.12+-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.128.0+-009688)
+![Classification Accuracy](https://img.shields.io/badge/Accuracy-100%25-success)
+![Coverage](https://img.shields.io/badge/Coverage-100%25-brightgreen)
+![Response Time](https://img.shields.io/badge/Response-5--10s-orange)
+![License](https://img.shields.io/badge/License-AGPL--3.0%20|%20Commercial-blue)
+
+</div>
+
+---
+
+## Acknowledgments
+
+This project was built with:
+- Modern Python development practices and tooling
+- Clean Architecture and Domain-Driven Design principles
+- Test-Driven Development methodology
+- Comprehensive CI/CD pipeline with GitHub Actions
+- Enterprise-grade code quality standards
+- Community-driven open source values
+
+Special thanks to:
+- **Google Gemini Team** for the powerful 2.5 Flash model
+- **FastAPI Community** for the excellent web framework
+- **PLCopen** for XML standardization
+- Open source contributors and maintainers
+
+---
+
+<div align="center">
+
+**If you find this project useful, please consider giving it a ⭐ star!**
+
+Made with precision and care by A. Carolina I-Araujo
+
+</div>
